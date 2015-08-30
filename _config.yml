@@ -9,9 +9,9 @@ url:
 
 # Owner/author information
 owner:
-  name:           Huang Jie
+  name:           黄杰
   avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  bio:            "记录生活和工作中的点点滴滴"
   email:          hj1984930@gmail.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
@@ -23,7 +23,7 @@ owner:
   flickr:         
   tumblr:         
   # google plus id, include the '+', eg +mmistakes
-  google_plus:    +yourid
+  google_plus:    +hj1984930@gmail.com
 
 # Background image to be tiled on all pages
 background: witewall_3.png
