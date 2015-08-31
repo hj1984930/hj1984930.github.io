@@ -24,15 +24,4 @@ image:
 * iptables关闭
 * selinux关闭
 * 如果安装了PackageKit，要修改配置文件`/etc/yum/pluginconf.d/refresh-packagekit.conf`，改为**enabled=0**
-* 关闭ipv6,方法如下：
-{% raw %}
-mkdir -p /etc/sysctl.d
-cat > /etc/sysctl.d/99-hadoop-ipv6.conf <<-'EOF'
-## Disabled ipv6
-## Provided by Ambari Bootstrap
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1
-net.ipv6.conf.lo.disable_ipv6 = 1
-EOF
-sysctl -e -p /etc/sysctl.d/99-hadoop-ipv6.conf
-{% end raw %}
+* 关闭ipv6
