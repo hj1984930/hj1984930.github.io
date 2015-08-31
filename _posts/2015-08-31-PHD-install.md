@@ -26,3 +26,64 @@ image:
 * selinux关闭
 * 如果安装了PackageKit，要修改配置文件`/etc/yum/pluginconf.d/refresh-packagekit.conf`，改为**enabled=0**
 * 关闭ipv6
+
+~~~ css
+> mkdir -p /etc/sysctl.d
+> ( cat > /etc/sysctl.d/99-hadoop-ipv6.conf <<-'EOF'
+## Disabled ipv6
+## Provided by Ambari Bootstrap
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+EOF
+    )
+> sysctl -e -p /etc/sysctl.d/99-hadoop-ipv6.conf
+~~~
+
+* 关闭Transparent Huge Pages (THP)，添加以下内容到`/etc/rc.local`,然后重启OS
+
+~~~ shell
+  
+  if test -f /sys/kernel/mm/redhat_transparent_hugepage/defrag; then echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag; fi
+  
+~~~
+###4. 以上准备工作完成后，安装Ambari Server
+* 安装httpd服务
+* 创建Staging目录
+
+~~~ shell
+~> mkdir /staging
+~> chmod a+rx /staging
+~~~
+* 从https://network.pivotal.io/products/pivotal-hd连接下载Pivotal Ambari 1.7.1压缩包，并解压缩
+
+~~~ shell
+~> tar -xvzf /staging/AMBARI-1.7.1-87-centos6.tar.gz -C /staging/
+~~~
+* 配置本地的YUM源
+
+~~~ shell
+~> /staging/AMBARI-1.7.1/setup_repo.sh
+~~~
+* 测试可以YUM可用
+
+~~~ shell
+~> curl http://localhost/AMBARI-1.7.1/repodata/repomd.xml
+~~~
+*通过本地的YUM源安装Ambari Server
+
+~~~ shell
+~> yum install ambari-server
+~~~
+
+*配置Ambari Server
+
+~~~ shell
+~> ambari-server setup
+~~~
+根据提示配置，需要Oracle JDK1.7，不支持JDK1.6，另外需要一个关系型数据库，如postgres或是mysql均可
+*启动Ambari Server
+~~~ shell
+~> ambari-server start
+~~~
+
