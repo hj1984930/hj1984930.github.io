@@ -10,6 +10,7 @@ image:
 ---
 
 ###Pivotal HD 3.0的集群规划及安装配置
+
 ####1. 准备工作
 * 操作系统：CentOS 6.4+ (64-bit)
 * 软件工具：python2.6以上、Oracle jdk-7u67-linux-x64.tar.gz、openssl-1.0.1e-16.el6.x86_64以上
