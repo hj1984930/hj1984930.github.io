@@ -93,6 +93,7 @@ ambari-server start
 ~~~
 
 ###5. 下载需要的安装文件
+
 | 文件名       | 下载         | 描述            |
 |:------------|:-----------:|----------------:|
 | Ambari-1.7.1   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Ambari的sever和agent |
