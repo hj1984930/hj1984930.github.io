@@ -27,7 +27,7 @@ image:
 * 如果安装了PackageKit，要修改配置文件`/etc/yum/pluginconf.d/refresh-packagekit.conf`，改为**enabled=0**
 * 关闭ipv6
 
-~~~ css
+~~~ java
 > mkdir -p /etc/sysctl.d
 > ( cat > /etc/sysctl.d/99-hadoop-ipv6.conf <<-'EOF'
 ## Disabled ipv6
@@ -42,7 +42,7 @@ EOF
 
 * 关闭Transparent Huge Pages (THP)，添加以下内容到`/etc/rc.local`,然后重启OS
 
-~~~ shell
+~~~ java
   if test -f /sys/kernel/mm/redhat_transparent_hugepage/defrag; then echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag; fi  
 ~~~
 
@@ -91,4 +91,43 @@ ambari-server setup
 ~~~ java
 ambari-server start
 ~~~
+
+###5. 下载需要的安装文件
+| 文件名 | 下载地址 | 描述 |
+|:------|:------:|-----:|
+| Ambari-1.7.1   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Ambari的sever和agent |
+| PHD-3.0.1.0   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Pivotal Hadood套件包括HDFS, YARN, HBASE, HIVE, OOZIE, ZOOKEEPER. |
+| PADS-1.3.1.0   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Pivotal高级功能组件，包括HAWQ, PXF, MADlib. |
+| PHD-UTILS-1.1.0.20   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | 工具包，包括监控报警等，如 Ganglia, Nagios  |
+
+* 下载后的文件解压缩至staging目录：
+
+~~~ java
+tar -xzf /tmp/{stack}.tar.gz -C /staging/
+~~~
+
+* 对于以上四个安装包，每一个都要配置YUM
+
+~~~ bash
+/staging/{stack}/setup_repo.sh
+~~~
+
+### 6. 登录到Ambari Server的管理台
+
+默认地址是 http://ip:8080
+默认用户名密码是 admin/admin
+
+1. 创建一个新的集群
+2. 修改YUM的配置为本地的YUM（就是刚刚前面自己配置的）
+3. 编辑集群的主机名和SSH KEY
+4. 选择要安装的软件
+5. 分配Masters和Slaves
+6. 后台程序会自动检测目前环境下有哪些不符合要求的，会给出解决方法，一定要手动都处理完
+7. 最后就是等待了，要安装十几分钟的
+8. 至此一个新的Hadoop集群已经创建完成了
+
+![Pivotal Hadoop Cluster](/images/ambari-server.png)
+
+
+
 
