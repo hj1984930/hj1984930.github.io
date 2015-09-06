@@ -101,11 +101,6 @@ ambari-server start
 | PADS-1.3.1.0   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Pivotal高级功能组件，包括HAWQ, PXF, MADlib. |
 | PHD-UTILS-1.1.0.20   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | 工具包，包括监控报警等，如 Ganglia, Nagios  |
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
 
 * 下载后的文件解压缩至staging目录：
 
