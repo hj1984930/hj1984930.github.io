@@ -5,7 +5,7 @@ description: ""
 modified: 2015-08-31
 tags: [hadoop, pivotal, 安装, 配置]
 image:
-  feature: abstract-9.jpg
+  feature: abstract-8.jpg
 
 ---
 
@@ -93,8 +93,8 @@ ambari-server start
 ~~~
 
 ###5. 下载需要的安装文件
-| 文件名 | 下载地址 | 描述 |
-|:------|:------:|-----:|
+| 文件名 | 下载链接 | 描述 |
+|:--------|:-------:|--------:|
 | Ambari-1.7.1   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Ambari的sever和agent |
 | PHD-3.0.1.0   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Pivotal Hadood套件包括HDFS, YARN, HBASE, HIVE, OOZIE, ZOOKEEPER. |
 | PADS-1.3.1.0   | [下载链接](https://network.pivotal.io/products/pivotal-hd#/releases/206)   | Pivotal高级功能组件，包括HAWQ, PXF, MADlib. |
