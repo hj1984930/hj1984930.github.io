@@ -86,7 +86,7 @@ fi
 ~~~
 
 这样重启kafka后，通过kafka-manager的web界面可以监控到性能指标。
-~[监控jmx](/images/kafka-jmx.png)
+![监控jmx](/images/kafka-jmx.png)
 
 
 
