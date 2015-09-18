@@ -75,7 +75,18 @@ cd /opt/kafka-manager-1.2.5/bin
 然后通过9000端口访问：
 ![kafka-manager界面](/images/kafka-manager.png)
 
+####9. 设置JMX监控kafka性能指标数据
+修改`/opt/kafka/bin/kafka-server-start.sh`，添加一行到下面的位置，export JMX_PORT="9999"，添加后效果如下：
 
+~~~shell
+if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
+    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
+    export JMX_PORT="9999"
+fi
+~~~
+
+这样重启kafka后，通过kafka-manager的web界面可以监控到性能指标。
+~[监控jmx](/images/kafka-jmx.png)
 
 
 
