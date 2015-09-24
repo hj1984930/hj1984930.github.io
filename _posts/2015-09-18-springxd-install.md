@@ -12,7 +12,7 @@ image:
 ###SpringXD集群的分布式安装和部署
 
 ####1. 安装springxd
-下载rpm安装包
+首先需要jdk7，下载rpm安装包
 
 ~~~bash
 wget https://repo.spring.io/libs-release-local/org/springframework/xd/spring-xd/1.2.0.RELEASE/spring-xd-1.2.0.RELEASE-1.noarch.rpm
