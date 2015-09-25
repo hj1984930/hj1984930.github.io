@@ -11,7 +11,7 @@ image:
 
 ###SpringXD流处理举例
 
-![金融高频数据处理流图](/image/springxd.png)
+![金融高频数据处理流图](/images/springxd.png)
 
 ####1. 金融高频数据
 首先在GPDB中创建一个表，用来接受金融高频数据，这里用行情数据price举例
