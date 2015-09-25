@@ -129,12 +129,15 @@ stream create --name kafka2gp --definition "kafka --zkconnect=10.2.29.4:2181 --t
 ####3. 验证数据是否进入到gpdb的price表
 通过pgadmin工具，查看数据表price
 
-[price表的数据](/images/gpdb-price.png)
+![price表的数据](/images/gpdb-price.png)
 
 
 ####4. 注意
 springxd安装后，没有gpdb的jar包，需要将postgresql-9.4-1201-jdbc41.jar包放到`/opt/pivotal/spring-xd/xd/lib`位置下，重启springxd-container即可
 同样如果在springxd的job中使用gpdb，也需要将包放到`/opt/pivotal/spring-xd/xd/modules/job`下对应的job模块的lib目录
+
+
+####5. 其他流
 
 
 
