@@ -16,7 +16,7 @@ image:
 ####1. 金融高频数据
 首先在GPDB中创建一个表，用来接受金融高频数据，这里用行情数据price举例
 
-~~~sql
+```sql
 create table price(
 id bigint,
 bondid_type integer,
@@ -117,7 +117,7 @@ Prefix varchar
 )
 WITH (appendonly=true,orientation=column,compresstype=QUICKLZ,COMPRESSLEVEL=1)  
 distributed  by  (trade_date)  ;
-~~~
+```
 
 ####2. 在springxd集群中创建一个stream流kafka2gp
 这个stream的作用就是从kafka中取对应的topic数据，经过springxd处理，流向gpdb
