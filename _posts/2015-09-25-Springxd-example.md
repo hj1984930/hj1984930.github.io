@@ -2,7 +2,7 @@
 layout: post
 title: SpringXD流处理举例
 description: ""
-modified: 2015-09-18
+modified: 2015-09-25
 tags: [springxd, 大数据, 流计算, ]
 image:
   feature: abstract-5.jpg
@@ -11,7 +11,7 @@ image:
 
 ###SpringXD流处理举例
 
-[金融高频数据处理流图](/image/springxd.png)
+![金融高频数据处理流图](/image/springxd.png)
 
 ####1. 金融高频数据
 首先在GPDB中创建一个表，用来接受金融高频数据，这里用行情数据price举例
@@ -138,6 +138,101 @@ springxd安装后，没有gpdb的jar包，需要将postgresql-9.4-1201-jdbc41.ja
 
 
 ####5. 其他流
+
+kafka到文件
+~~~
+stream create --name kakfa2fs --definition "kafka --zkconnect=10.2.29.4:2181 --topic=price --outputType=text/plain | file --inputType=text/plain --dir=/opt/test --name=price" --deploy
+~~~
+
+kafka tap分流到hdfs
+
+~~~
+stream create --name kakfa2fs --definition "tap:stream:kafka2fs > hdfs --directory=/xd/fitl/ --fileName=price"  --deploy
+~~~
+
+
+http接收数据到hdfs
+
+~~~
+stream create --name http2hdfs --definition "http --port=9000 | hdfs --fsUri=hdfs://phd3-m1.xxb.cn:8020 --directory=/xd/fitl --fileName=httphdfs"
+http post --target http://localhost:9000 --data "huangjie 3"
+~~~
+
+####6. 使用job将csv文件导入mysql数据库
+
+将csv文件导入mysql数据库，可以直接使用filejdbc这个job来完成
+首先将mysql-connector-java-5.1.34.jar的包放到`/opt/pivotal/spring-xd/xd/modules/job/filejdbc/lib`这个路径下
+
+~~~
+xd:>job create csvmysql --definition "filejdbc --driverClassName=com.mysql.jdbc.Driver --url=jdbc:mysql://gfxd1.xxb.cn:3306/springxd --username=springxd --password=springxd --resources=file:///opt/people.csv --names=forename,surname,address --tableName=people" --deploy 
+Successfully created and deployed job 'csvmysql' 
+--调用job
+xd:>job launch csvmysql 
+Successfully submitted launch request for job 'csvmysql' 
+~~~
+
+~~~
+[root@springxd1 opt]# more people.csv 
+jian,gong,beijing 
+chun,lu,guangzhou 
+~~~
+
+~~~
+[root@springxd1 opt]# mysql -uspringxd -h gfxd1.xxb.cn -p 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g. 
+Your MySQL connection id is 761 
+Server version: 5.1.73 Source distribution 
+
+Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved. 
+
+Oracle is a registered trademark of Oracle Corporation and/or its 
+affiliates. Other names may be trademarks of their respective 
+owners. 
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement. 
+
+mysql> use springxd 
+Reading table information for completion of table and column names 
+You can turn off this feature to get a quicker startup with -A 
+
+Database changed 
+mysql> select * from people; 
++----------+---------+-----------+ 
+| forename | surname | address   | 
++----------+---------+-----------+ 
+| jie      | huang   | shanghai  | 
+| jian     | gong    | beijing   | 
+| chun     | lu      | guangzhou | 
++----------+---------+-----------+ 
+3 rows in set (0.00 sec) 
+~~~
+
+####7. 使用filejdbc将csv文件导入GPDB
+首先将postgresql-8.1-407.jdbc3.jar的包放到`/opt/pivotal/spring-xd/xd/modules/job/filejdbc/lib`这个路径下
+
+~~~
+job create hjgpdb --definition "filejdbc --driverClassName=org.postgresql.Driver --url=jdbc:postgresql://10.2.28.234:5432/fitl --username=gpadmin --password=gpadmin --resources=file:///opt/people.csv --names=forename,surname,address --tableName=people" --deploy 
+~~~
+
+~~~
+fitl=# create table people (forename varchar(20),   surname   varchar(20), address varchar(20));
+NOTICE:  Table doesn't have 'DISTRIBUTED BY' clause -- Using column named 'forename' as the Greenplum Database data distribution key for this table.
+HINT:  The 'DISTRIBUTED BY' clause determines the distribution of data. Make sure column(s) chosen are the optimal data distribution key to minimize skew.
+CREATE TABLE
+Time: 26.762 ms
+fitl=# select * from people;
+ forename | surname | address
+----------+---------+---------
+(0 rows)
+
+Time: 7.581 ms
+
+xd:>job create hjgpdb --definition "filejdbc --driverClassName=org.postgresql.Driver --url=jdbc:postgresql://10.2.28.234:5432/fitl --username=gpadmin --password=xxxx --resources=file:///opt/people.csv --names=forename,surname,address --tableName=people" --deploy 
+Successfully created and deployed job 'hjgpdb'
+~~~
+
+
 
 
 
