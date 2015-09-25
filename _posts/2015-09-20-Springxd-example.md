@@ -129,7 +129,7 @@ stream create --name kafka2gp --definition "kafka --zkconnect=10.2.29.4:2181 --t
 ####3. 验证数据是否进入到gpdb的price表
 通过pgadmin工具，查看数据表price
 
-[price表的数据](/image/gpdb-price.png)
+[price表的数据](/images/gpdb-price.png)
 
 
 ####4. 注意
