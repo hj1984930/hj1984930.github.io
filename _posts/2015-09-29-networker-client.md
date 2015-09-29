@@ -44,3 +44,21 @@ yum install lgtoclnt-8.1.1.8-1.x86_64.rpm  -y
 ![设置备份目标](/images/client-new-7.png)
 * 完成配置
 ![完成配置](/images/client-new-8.png)
+
+###4. networker客户端无法连接处理
+
+* networker相关服务重启
+
+~~~bash
+/etc/init.d/gst stop
+/etc/init.d/gst start
+service networker stop
+service networker start
+~~~
+
+* vba相关服务重启
+
+~~~
+emwebapp.sh --stop
+emwebapp.sh --start
+~~~
