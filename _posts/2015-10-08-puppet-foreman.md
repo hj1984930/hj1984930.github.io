@@ -1,15 +1,15 @@
 ---
 layout: post
-title: 自动化运维工具puppet和foreman使用
+title: 自动化运维工具puppet和foreman使用总结
 description: ""
 modified: 2015-10-08
 tags: [puppet, 自动化运维, foreman ]
 image:
-  feature: abstract-9.jpg
+  feature: abstract-8.jpg
 
 ---
 
-###自动化运维工具puppet和foreman使用经验
+###自动化运维工具puppet和foreman使用总结
 - - -
 
 2013年启动和实施，稳定有效的运行了两年多
@@ -84,5 +84,6 @@ foreman-installer \
 * 期初modules的是自己编写，后来觉得没必要重复制造轮子，就使用forge和puppetlab上的现有资源，经过简单的修改直接使用
 * 开发调试还是要经过开发环境和测试环境的验证后，在推送到生产环境中使用
 * 公网上的yum源存在不稳定因素，会影响配置的推送和安装部署，导致失败，重要配置使用自己本地yum源，如果有需要，如tomcat环境，自己打包rpm，并配置yum源
+* puppet-client初始配置问题，最好是OS层自动化部署安装时将puppet client的配置打进去，启动时自启动，同时获取CA
 
 
