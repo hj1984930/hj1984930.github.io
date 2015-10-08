@@ -5,7 +5,7 @@ description: ""
 modified: 2015-10-08
 tags: [puppet, 自动化运维, foreman ]
 image:
-  feature: abstract-8.jpg
+  feature: abstract-12.jpg
 
 ---
 
