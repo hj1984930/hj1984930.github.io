@@ -29,6 +29,7 @@ yum install --nogpgcheck  shiny-server-1.4.0.662-rh6-x86_64.rpm
 
 ####应用程序
 将shiny的自带例子复制到shiny-server下
+
 ~~~
 cp -r /usr/lib64/R/library/shiny/examples/* /srv/shiny-server/
 ~~~
@@ -64,4 +65,4 @@ lrwxrwxrwx 1 root root   37 10月 13 14:59 sample-apps -> /opt/shiny-server/samp
 ~~~ 
 
 ![shiny-server](/images/shiny-server.png)
-![shiny-server-01-hello](/images/shiny-server.png)
+![shiny-server-01-hello](/images/shiny-server-hello.png)
