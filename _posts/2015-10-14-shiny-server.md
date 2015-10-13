@@ -11,7 +11,7 @@ image:
 
 ###Shiny-Server安装配置
 - - -
-####R环境准备
+####环境R准备
 
 * R环境已经有了
 * 安装shiny包，install.packages('shiny')
