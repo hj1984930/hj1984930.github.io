@@ -16,7 +16,7 @@ image:
 
 * R环境已经有了
 * 安装shiny包，install.packages('shiny')
-
+* 安装rmarkdown包，install.packages('rmarkdown')
 ####下载rpm安装包
 
 ~~~
