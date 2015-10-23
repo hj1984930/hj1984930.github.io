@@ -35,7 +35,7 @@ docker pull oddrationale/docker-shadowsocks
 ####运行shadowsocks镜像
 
 ~~~
-docker run -d -p 2022:2022 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 7777 -k xxxx -m aes-256-cfb
+docker run -d -p 7777:7777 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 7777 -k xxxx -m aes-256-cfb
 ~~~
 
 * shadowsocks的端口是7777
