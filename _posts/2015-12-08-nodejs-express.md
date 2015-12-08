@@ -157,6 +157,10 @@ npm start
 
 > nodejs-demo@0.0.0 start /Users/huangjie/javascript/nodejs-demo
 > node ./bin/www
+GET / 200 15.102 ms - 207
+GET /stylesheets/style.css 200 3.974 ms - 111
+GET /favicon.ico 404 3.388 ms - 1076
+GET / 200 1.632 ms - 207
 ~~~
 
 测试是否启动成功
