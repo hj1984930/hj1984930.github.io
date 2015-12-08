@@ -115,7 +115,8 @@ GET / 200 13ms - 206
 
 测试是否启动成功
 
-~~~curl http://localhost:3000
+~~~html
+curl http://localhost:3000
 <!DOCTYPE html>
 <html>
   <head>
