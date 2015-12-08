@@ -85,12 +85,13 @@ express -e nodejs-demo
      $ cd nodejs-demo && npm install
 
    run the app:
-     $ DEBUG=nodejs-demo:* npm start~~~
+     $ DEBUG=nodejs-demo:* npm start
+~~~
 
 为项目安装依赖包
 
 ~~~
-d nodejs-demo && npm install
+cd nodejs-demo && npm install
 ejs@2.3.4 node_modules/ejs
 
 debug@2.2.0 node_modules/debug
