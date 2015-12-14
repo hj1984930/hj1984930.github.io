@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Docker环境部署
+title: Centos7上Docker和kubernets环境部署
 description: ""
 modified: 2015-12-08
 tags: [docker,kubernetes]
@@ -9,9 +9,11 @@ image:
   
 ---
 
-###Docker环境部署
+###Centos7上Docker和kubernets环境部署
 
 - - -
+
+注意：关闭firewall和selinux
 
 ####安装etcd
 
