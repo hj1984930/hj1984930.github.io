@@ -3,7 +3,7 @@ layout: post
 title: 沪深300指数计算(实时)
 description: ""
 modified: 2016-01-11
-tags: [python, springxd]
+tags: [python, spring-xd]
 image:
   feature: abstract-11.jpg
   
