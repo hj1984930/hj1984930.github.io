@@ -14,6 +14,7 @@ image:
 - - -
 
 ###环境说明
+
 * wind量化客户端
 * mysql5.5
 * windows2008
@@ -58,10 +59,10 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ###调用WIND PythonAPI
 
-调用wind提供的pythonAPI，读取基金基本信息数据，并写入到mysql表
-这里将股票型基金、混合型中的偏股型基金以及货币基金从成立之日开始至今的时间序列数据导入到数据库
+* 调用wind提供的pythonAPI，读取基金基本信息数据，并写入到mysql表
+* 这里将股票型基金、混合型中的偏股型基金以及货币基金从成立之日开始至今的时间序列数据导入到数据库
 
-~~~sql
+~~~python
 # -*- coding:utf-8 -*-
 #  __author__ = "huangjie"
 
