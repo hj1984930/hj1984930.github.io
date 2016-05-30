@@ -5,7 +5,7 @@ description: ""
 modified: 2016-05-30
 tags: [python, greenplum, database]
 image:
-  feature: CFFE.jpg
+  feature: account.png
   
 ---
 
