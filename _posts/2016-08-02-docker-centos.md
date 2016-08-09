@@ -369,12 +369,12 @@ ab8d0c4da4c1        uifd/ui-for-docker   "/dockerui"         27 seconds ago     
 
 ### 使用dockerUI来管理镜像和容器
 
-![dockerUI的Dashboard](images/dockerUI-dashboard)
+![dockerUI的Dashboard](/images/dockerUI-dashboard.png)
 
-![dockerUI的镜像](images/dockerUI-images)
+![dockerUI的镜像](/images/dockerUI-images.png)
 
-![dockerUI的容器](images/dockerUI-containers)
+![dockerUI的容器](/images/dockerUI-containers.png)
 
-![dockerUI的info](images/dockerUI-info)
+![dockerUI的info](/images/dockerUI-info.png)
 
-![dockerUI的容器信息](images/dockerUI-container)
+![dockerUI的容器信息](/images/dockerUI-container.png)
