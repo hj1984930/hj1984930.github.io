@@ -360,14 +360,21 @@ dl.dockerpool.com:5000/centos   latest              87e5b6b3ccc1        22 month
 ### DockerUI
 
 ~~~bash
-docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock hypriot/rpi-dockerui
-
+docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker
+[root@hj-t ~]# docker ps
+CONTAINER ID        IMAGE                COMMAND             CREATED             STATUS              PORTS                    NAMES
+ab8d0c4da4c1        uifd/ui-for-docker   "/dockerui"         27 seconds ago      Up 26 seconds       0.0.0.0:9000->9000/tcp   furious_kowalevski
 ~~~
 
 
-### Shipyard
+### 使用dockerUI来管理镜像和容器
 
-~~~
-docker run -p 9000:9000 --rm -v /var/run/docker.sock:/var/run/docker.sock shipyard/deploy start
-~~~
+![dockerUI的Dashboard](images/dockerUI-dashboard)
 
+![dockerUI的镜像](images/dockerUI-images)
+
+![dockerUI的容器](images/dockerUI-containers)
+
+![dockerUI的info](images/dockerUI-info)
+
+![dockerUI的容器信息](images/dockerUI-container)
