@@ -5,7 +5,7 @@ description: ""
 modified: 2016-09-03
 tags: [centos, sleep,]
 image:
-  feature: disk.png
+  feature: linux.jpeg
   
 ---
 
