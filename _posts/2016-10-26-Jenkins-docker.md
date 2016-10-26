@@ -86,20 +86,30 @@ centos                           latest              980e0e4c79ec        7 weeks
 * 创建三个子任务，test-env-compile-job,test-env-deploy-sanzhu-job,test-env-regression-test-job
 
 ![项目管理任务](/images/jenkins-sanzhu.png)
+
 ![编译与构建镜像](/images/jenkins-compile-1.png)
+
 ![编译与构建镜像](/images/jenkins-compile-2.png)
+
 ![编译与构建镜像](/images/jenkins-compile-3.png)
+
 ![编译与构建镜像](/images/jenkins-compile-4.png)
+
 ![部署到容器云](/images/jenkins-deploy-1.png)
+
 ![部署到容器云](/images/jenkins-deploy-2.png)
+
 ![部署到容器云](/images/jenkins-deploy-3.png)
+
 ![回归测试](/images/jenkins-test.png)
 
 
 #### 执行任务看看效果
 
 ![应用交付](/images/dce-1.png)
+
 ![应用交付](/images/dce-2.png)
+
 ![应用交付](/images/dce-3.png)
 
 
