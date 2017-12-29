@@ -5,7 +5,7 @@ description: ""
 modified: 2017-12-29
 tags: [Chrome, Theme, ]
 image:
-  feature: ChromeTheme.png
+  feature: Halloween.png
   
 ---
 
@@ -15,7 +15,7 @@ image:
 
 [https://www.themebeta.com/chrome/theme/205868](Halloween)
 
-![Halloween.png]()
+![Halloween](/images/Halloween.png)
 
 
 
@@ -23,19 +23,19 @@ image:
 
 [https://chrome.google.com/webstore/detail/minimal-white/clcbojcafbggjenbeflknhfimpcikmlc](MinimalWhite)
 
-![MinimalWhite.png]()
+![MinimalWhite](/images/MinimalWhite.png)
 
 #### Cosmopolise
 
 [https://chrome.google.com/webstore/detail/cosmopolise/ipihgjdhjoldhpfpmiiimpnmohpfhkcm](Cosmopolise)
 
-![Cosmopolise.png]()
+![Cosmopolise](/images/Cosmopolise.png)
 
 #### Baseball
 
 [https://chrome.google.com/webstore/detail/baseball/njneehkdlobpllhkldmhhephffnniaec](Baseball)
 
-![Baseball.png]()
+![Baseball](/images/Baseball.png)
 
 #### Colors
 
@@ -45,7 +45,7 @@ Personalize your background with 'Colors', the new colorful browser theme for Go
 
 [https://chrome.google.com/webstore/detail/colors/lhbgjlhhonbdjfdoiklbbkejcipkbnac](Colors)
 
-![Colors.png]()
+![Colors](/images/Colors.png)
 
 #### K-ON!
 
@@ -53,7 +53,7 @@ Personalize your background with 'Colors', the new colorful browser theme for Go
 
 [https://chrome.google.com/webstore/detail/k-on/jijlppfhlfgamaofmpafjpibhdmmcbde](K-ON!)
 
-![K-ON.png]()
+![K-ON](/images/K-ON.png)
 
 #### Edward Monkton
 
@@ -61,7 +61,7 @@ Personalize your background with 'Colors', the new colorful browser theme for Go
 
 [https://chrome.google.com/webstore/detail/edward-monkton/ioikoiiilnlhfgoccbloolfncbeaadpo](EdwardMonkton)
 
-![EdwardMonkton.png]()
+![EdwardMonkton](/images/EdwardMonkton.png)
 
 
 
